@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather app</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=partly_cloudy_day" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="everything">
+        <div class="searchnav">
+            <section class="search">
+                <input type="text" placeholder="Search here" id="search-input"/>
+                <button><i><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="m770-120-56-56 63-64H610v-80h167l-63-64 56-56 160 160-160 160ZM400-360q56 0 101-27.5t71-72.5q-35-29-79-44.5T400-520q-49 0-93 15.5T228-460q26 45 71 72.5T400-360Zm0-200q33 0 56.5-23.5T480-640q0-33-23.5-56.5T400-720q-33 0-56.5 23.5T320-640q0 33 23.5 56.5T400-560Zm0 67Zm0 413Q239-217 159.5-334.5T80-552q0-150 96.5-239T400-880q127 0 223.5 89T720-552q0 9-.5 18.5T717-514h-81q2-10 3-19.5t1-18.5q0-109-69.5-178.5T400-800q-101 0-170.5 69.5T160-552q0 71 59 162.5T400-186q23-20 42.5-40t37.5-39l9 9 19.5 19.5q10.5 10.5 19 19.5l8.5 9q-29 31-63 63t-73 65Z"/></svg></i></button>
+             </section>
+            <section class="daily-update">
+            <img src="" id="weather-icon"/>
+            <h1 class="temp"></h1>
+            <h2 class="city"></h2>
+            <hr>
+            <div class="fewInfo">
+            <p class="weather-pic"><span class="material-symbols-outlined"></span> </p>
+            </div>
+            </section>
+        </div>
+<div class="right-side">
+    <h3 class="highligt">Upcoming days</h3>
+        <div class="card1">
+            
+            <div class="thu">
+                <h2 class="day1">Thu</h2>
+                <img src="image/cloud.png" id="weather-icon">
+                <h3 class="temp-wed">15°C</h3>
+            </div>
+            <div class="fri">
+                <h2 class="day2">Fri</h2>
+                <img src="image/hot.jpg" id="weather-icon">
+                <h3 class="temp-thu">32°C</h3>
+            </div>
+            <div class="sat">
+                <h2 class="day3">Sat</h2>
+                <img src="image/drizzle.webp" id="weather-icon">
+                <h3 class="temp-fri">18°C</h3>
+            </div>
+            <div class="sun">
+               <h2 class="day4">Sun</h2>
+                <img src="image/hot.jpg" id="weather-icon">
+                <h3 class="temp-sat">20°C</h3>
+            </div>
+            <div class="mon">
+               <h2 class="day5">Mon</h2>
+                <img src="image/rain.webp" id="weather-icon">
+                <h3 class="temp-sat">8°C</h3>
+            </div>
+            <div class="tue">
+               <h2 class="day4">Tue</h2>
+                <img src="image/rain.webp" id="weather-icon">
+                <h3 class="temp-sat">10°C</h3>
+            </div>
+        </div>
+
+
+
+    <div class="moreinfo">
+        <h3 class="highlight">Today's Highlight</h3>
+        <div class="temperature">
+            <div class="humidity">
+                <h3>Humadity</h3>
+                <img src="image/humidity.webp" id="weather-icons">
+                <h3 class="humadity"></h3>
+            </div>
+            <div class="speed-temp">
+                <h2>Wind Status</h2>
+                <img src="image/speed.webp" id="weather-icons">
+                <h3 class="speed"></h3>
+            </div>
+            <div class="pressure-temp">
+                <h2>Pressure</h2>
+                <img src="image/pressure.webp" id="weather-icons">
+                <h3 class="pressure"></h3>
+            </div>
+            
+        </div>
+    </div>
+    </div>
+    </div>
+    <script src="Script.js"></script>
+</body>
+
+</html>
