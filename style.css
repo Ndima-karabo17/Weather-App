@@ -6,8 +6,8 @@
 
 body {
 
-    background-color: #0891B2;
-    color: white
+    background-color: #e3edf6;
+    color: black;
 }
 
 
@@ -16,7 +16,7 @@ body {
     height: 800px;
     flex-wrap: wrap;
     justify-content: space-between;
-    background-color: #167288;
+    background-color: #F0F8FF;
     padding: 40px;
     border-radius: 20px;
     margin: 50px auto;
@@ -26,7 +26,7 @@ body {
 
 .searchnav {
     flex: 1 1 300px;
-    background-color: #0891B2;
+    background-color: #e3edf6;;
     padding: 20px;
     border-radius: 20px;
     margin-bottom: 20px;
@@ -51,7 +51,7 @@ body {
 button {
     padding: 10px;
     border: none;
-    background-color: #1488CC;
+    background-color: #e3edf6;
     border-radius: 50%;
     cursor: pointer;
 }
@@ -102,17 +102,17 @@ button {
     margin-top: 100px;
 }
 .card1>div {
-    background-color: #1488CC;
-    padding: 20px;
+    background-color: #e3edf6;
+    padding: 30px;
     border-radius: 20px;
     text-align: center;
     margin-left: 10px;
 }
 .card1>div:hover{
-    background-color: #0c679c;
+    background-color: #cadeef;
 }
 .temperature>div {
-    background-color: #1488CC;
+    background-color: #e3edf6;
     padding: 20px;
     margin-top: 20px;
     border-radius: 20px;
@@ -120,7 +120,7 @@ button {
     margin-left: 10px;
 }
 .temperature>div:hover{
-     background-color: #0c679c;
+     background-color: #cadeef;
 }
 .card1 img {
     width: 60px;
