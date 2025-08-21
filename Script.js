@@ -28,17 +28,17 @@ async function checkWeather(city) {
         const weatherCondition = data.weather[0].main;
 
         if (weatherCondition === "Clouds") {
-            weather_icon.src = "image/cloud.png";
+            weather_icon.src = "https://openweathermap.org/img/wn/03d@2x.png";
         } else if (weatherCondition === "Rain") {
-            weather_icon.src = "image/rain.webp";
+            weather_icon.src = "https://openweathermap.org/img/wn/10d@2x.png";
         } else if (weatherCondition === "Drizzle") {
-            weather_icon.src = "image/drizzle.webp";
+            weather_icon.src = "https://openweathermap.org/img/wn/09d@2x.png";
         } else if (weatherCondition === "Mist") {
-            weather_icon.src = "image/mist.jpg";
+            weather_icon.src = "https://openweathermap.org/img/wn/50d@2x.png";
         } else if (weatherCondition === "Clear") {
-            weather_icon.src = "image/clear.webp";
+            weather_icon.src = "https://openweathermap.org/img/wn/01d@2x.png";
         } else if (weatherCondition === "Hot") {
-            weather_icon.src = "image/hot.jpg";
+            weather_icon.src = "https://openweathermap.org/img/wn/01d@2x.png";
         } else {
             weather_icon.src = "image/default.png";
         }
@@ -81,15 +81,15 @@ async function getForecast(city) {
                 const img = container.querySelector("img");
 
                 if (weatherMain === "Clouds") {
-                    img.src = "image/cloud.png";
+                    img.src = "https://openweathermap.org/img/wn/03d@2x.png";
                 } else if (weatherMain === "Rain") {
-                    img.src = "image/rain.webp";
+                    img.src = " https://openweathermap.org/img/wn/10d@2x.png";
                 } else if (weatherMain === "Drizzle") {
-                    img.src = "image/drizzle.webp";
+                    img.src = "https://openweathermap.org/img/wn/09d@2x.png";
                 } else if (weatherMain === "Clear") {
-                    img.src = "image/clear.webp";
+                    img.src = "https://openweathermap.org/img/wn/01d@2x.png";
                 } else if (weatherMain === "Mist") {
-                    img.src = "image/mist.jpg";
+                    img.src = "https://openweathermap.org/img/wn/50d@2x.png";
                 } else {
                     img.src = "image/default.png";
                 }
@@ -101,23 +101,48 @@ async function getForecast(city) {
     }
     
 }
-async function locationFocast(){
-        const apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${navigator.geolocation}&appid=${apiKey}&units=metric`;
-
-    try {
-        const response = await fetch(apiURL);
-        const data = await response.json();
-
-        if (response.status === 404 || data.cod === "404") {
-            alert("Location is off!");
+async function locationForecast() {
+        if (!navigator.geolocation) {
+            alert("Geolocation is not supported by your browser.");
             return;
         }
-const currentWeather = 
-        console.log(data);
-    }catch(error){
-        console.log("Turn on location", error);
+
+        navigator.geolocation.getCurrentPosition(async (position) => {
+            const lat = position.coords.latitude;
+            const lon = position.coords.longitude;
+
+            const apiURL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+
+            try {
+                const response = await fetch(apiURL);
+                const data = await response.json();
+
+                if (response.status === 404 || data.cod === "404") {
+                    alert("Could not fetch weather data!");
+                    return;
+                }
+
+                
+                document.querySelector(".temp").textContent = `${data.main.temp}°C`;
+                document.querySelector(".city").textContent = data.name;
+                document.querySelector("#weather-icon").src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+                document.querySelector(".weather-pic .material-symbols-outlined").textContent = data.weather[0].main;
+
+                console.log(data); 
+
+            } catch (error) {
+                console.error("Failed to fetch weather data", error);
+            }
+        }, (error) => {
+            alert("Please enable location access.");
+            console.error(error);
+        });
     }
-}
+
+    
+    window.onload = locationForecast;
+
+
 searchBtn.addEventListener("click", () => {
     const city = searchBox.value;
     if (city !== "") {
