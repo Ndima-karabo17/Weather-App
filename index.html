@@ -6,10 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather app</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=partly_cloudy_day" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=light_mode" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=dark_mode" />
+
+    
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+     <div class="container">
+        
+        <label class="switch">
+            <input type="checkbox" id="mode-toggle"/>
+            <span class="material-symbols-outlined icon dark" id="icon-dark">dark_mode</span>
+    <span class="material-symbols-outlined icon light" id="icon-light">light_mode</span>
+  <span class="slider round"></span>
+        </label>
+    </div>
     <div class="everything">
         <div class="searchnav">
             <section class="search">
@@ -27,6 +40,7 @@
             </section>
         </div>
 <div class="right-side">
+   
     <h3 class="highligt">Upcoming days</h3>
         <div class="card1">
             
