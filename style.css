@@ -142,6 +142,80 @@ margin-top: 30px;
     margin-top: -20px;
     padding-bottom: 30px;
 }
+.container{
+    display: flex;
+    align-items: center;
+    gap:10px;
+}
+.switch{
+    position:relative;
+    display: inline-block;
+    width:60px;
+    height: 34px;
+}
+.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.dark-mode .everything {
+    background-color: #1e1e1e;
+}
+
+.dark-mode .searchnav,
+.dark-mode .card1 > div,
+.dark-mode .temperature > div {
+    background-color: #2c2c2c;
+}
+
+.dark-mode input{
+    background-color: #333;
+    color: #fff;
+}
+
+.dark-mode button {
+    background-color: #444;
+}
+
+.dark-mode .card1 > div:hover,
+.dark-mode .temperature > div:hover {
+    background-color: #3a3a3a;
+}
+
+#dark-mode {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2; 
+ 
+}
+.switch input[type="checkbox"] {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+  z-index: 1; 
+}
+.icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.icon.light {
+  display: none;
+}
+
+body.dark-mode .icon.dark {
+  display: none;
+}
+
+body.dark-mode .icon.light {
+  display: inline;
+}
 @media (max-width: 768px) {
     .everything {
         flex-direction: column;
